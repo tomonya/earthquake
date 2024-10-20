@@ -15,3 +15,4 @@ $.getJSON("prefectures.geojson", function (data) {
         style: PolygonLayer_Style_nerv
     }).addTo(map);
 }); 
+
