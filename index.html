@@ -4,6 +4,25 @@
     
   </head>
   <body>
-<iframe id="myIframe" src="http://www.kmoni.bosai.go.jp/" onload="iframeLoaded()" onerror="iframeError()"></iframe><script>  const iframe = document.getElementById('myIframe');  const timeout = 3000; // タイムアウト時間 (ミリ秒)  let timeoutId;  function iframeLoaded() {    clearTimeout(timeoutId);    console.log('iframe loaded successfully');  }  function iframeError() {    clearTimeout(timeoutId);    console.error('iframe loading failed');    switchToAlternativeSite();  }  function switchToAlternativeSite() {    iframe.src = 'https://typhoon.yahoo.co.jp/weather/earthquake/kyoshin/'     // 読み込み中にメッセージを表示するなど、ユーザーへのフィードバックを追加できます  }  timeoutId = setTimeout(switchToAlternativeSite, timeout);</script>
+    <iframe id="myIframe" src="http://www.kmoni.bosai.go.jp/" onload="iframeLoaded()" onerror="iframeError()"></iframe>
+    <script>
+      const iframe = document.getElementById('myIframe');
+      const timeout = 3000; // タイムアウト時間 (ミリ秒) 
+      let timeoutId;
+      function iframeLoaded() {
+        clearTimeout(timeoutId);
+        console.log('iframe loaded successfully');
+      }
+      function iframeError() {
+        clearTimeout(timeoutId);
+        console.error('iframe loading failed');
+        switchToAlternativeSite();
+      }  
+      function switchToAlternativeSite() {
+        iframe.src = 'https://typhoon.yahoo.co.jp/weather/earthquake/kyoshin/'
+        // 読み込み中にメッセージを表示するなど、ユーザーへのフィードバックを追加できます
+      }  
+      timeoutId = setTimeout(switchToAlternativeSite, timeout);
+    </script>
   </body>
 </html>
